@@ -1,0 +1,25 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+    {
+        path: '',
+        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
+        title: 'Arthur Santos | Software Developer'
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
+        title: 'Sobre | Arthur Santos'
+    },
+    {
+        path: 'projects',
+        loadComponent: () => import('./pages/projects/projects.component').then(m => m.ProjectsComponent),
+        title: 'Projetos | Arthur Santos'
+    },
+    {
+        path: 'contact',
+        loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent),
+        title: 'Contato | Arthur Santos'
+    },
+    { path: '**', redirectTo: '' }
+];

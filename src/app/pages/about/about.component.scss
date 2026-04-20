@@ -1,0 +1,228 @@
+.about {
+    padding-top: 7rem;
+
+    &__header {
+        margin-bottom: 2.5rem;
+    }
+
+    &__profile {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3.5rem;
+    }
+
+    &__photo-frame {
+        position: relative;
+        width: 190px;
+        height: 190px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, #7c3aed, #a78bfa, #7c3aed);
+            border-radius: 50%;
+            z-index: 0;
+            animation: rotate-border 6s linear infinite;
+        }
+    }
+
+    &__photo {
+        position: relative;
+        z-index: 1;
+        width: 190px;
+        height: 190px;
+        object-fit: cover;
+        object-position: center 22%;
+        border-radius: 50%;
+        border: 3px solid #0a0a14;
+        display: block;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 5rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+    }
+
+    &__bio {
+        p {
+            color: #9ca3af;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 0.97rem;
+
+            strong {
+                color: #e2e8f0;
+            }
+        }
+    }
+
+    &__info {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    &__skills {
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin: 0 0 1.5rem;
+        }
+    }
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #9ca3af;
+    font-size: 0.88rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-group {
+    h4 {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #8b5cf6;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 0 0 0.6rem;
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skill-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: #d1d5db;
+    transition: border-color 0.2s, color 0.2s;
+
+    &:hover {
+        border-color: rgba(139, 92, 246, 0.4);
+        color: #a78bfa;
+    }
+}
+
+// Experience timeline
+.experience {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 4rem;
+}
+
+.section-title--sm {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0 0 3rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(139, 92, 246, 0.2);
+    }
+
+    &__item {
+        position: relative;
+        margin-bottom: 3rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__dot {
+        position: absolute;
+        left: -2.375rem;
+        top: 0.25rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #8b5cf6;
+        box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin: 0;
+        }
+    }
+
+    &__period {
+        font-size: 0.8rem;
+        color: #8b5cf6;
+        font-family: 'JetBrains Mono', monospace;
+        white-space: nowrap;
+    }
+
+    &__company {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin: 0 0 0.75rem;
+    }
+
+    ul {
+        padding-left: 1.25rem;
+        margin: 0;
+
+        li {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 0.3rem;
+        }
+    }
+}
+
+@keyframes rotate-border {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,88 @@
+.footer {
+    background: #070710;
+    border-top: 1px solid rgba(139, 92, 246, 0.12);
+    padding: 3rem 0 1.5rem;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-family: 'JetBrains Mono', monospace;
+        color: #e2e8f0;
+
+        .logo-bracket {
+            color: #6b7280;
+        }
+
+        .logo-accent {
+            color: #8b5cf6;
+        }
+
+        p {
+            font-family: system-ui, sans-serif;
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 400;
+            margin-top: 0.4rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 1.75rem;
+        flex-wrap: wrap;
+
+        a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+
+            &:hover {
+                color: #8b5cf6;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            color: #6b7280;
+            transition: color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                color: #8b5cf6;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 1.5rem;
+
+        p {
+            color: #4b5563;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    }
+}

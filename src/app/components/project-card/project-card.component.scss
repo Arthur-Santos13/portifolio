@@ -1,0 +1,118 @@
+:host {
+    display: flex;
+    height: 100%;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.75rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.12);
+    }
+
+    &.featured {
+        border-color: rgba(139, 92, 246, 0.25);
+        background: rgba(139, 92, 246, 0.04);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+            color: #8b5cf6;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    &__link {
+        color: #6b7280;
+        transition: color 0.2s, transform 0.2s;
+        display: flex;
+
+        &:hover {
+            color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+    }
+
+    &__name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        margin: 0;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    &__desc {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.6;
+        flex: 1;
+        margin: 0;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.25rem;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+    }
+}
+
+.tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 4px;
+    color: #a78bfa;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #8b5cf6;
+
+    &[data-lang="Java"] {
+        background: #f89820;
+    }
+
+    &[data-lang="TypeScript"] {
+        background: #3178c6;
+    }
+
+    &[data-lang="JavaScript"] {
+        background: #f7df1e;
+    }
+}
+
+.lang-label {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
