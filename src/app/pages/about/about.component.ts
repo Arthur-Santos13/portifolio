@@ -95,7 +95,7 @@ export class AboutComponent implements AfterViewInit {
       },
       {
         label: this.lang.t('about.skillGroup.integration'),
-        skills: ['Microsserviços', 'Apache Kafka', 'API Gateway', 'Integração entre sistemas', 'Docker']
+        skills: [this.lang.t('about.skill.microservices'), 'Apache Kafka', 'API Gateway', this.lang.t('about.skill.systemIntegration'), 'Docker']
       },
       {
         label: this.lang.t('about.skillGroup.tools'),

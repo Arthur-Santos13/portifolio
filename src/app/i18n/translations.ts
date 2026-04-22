@@ -16,6 +16,7 @@ export const translations: Record<Lang, Record<string, string>> = {
         'home.btn.projects': 'Ver Projetos',
         'home.btn.contact': 'Entre em Contato',
         'home.scroll': 'Scroll',
+        'home.stack.microservices': 'Microsserviços',
         'home.services.title': 'O que eu faço',
         'home.service1.title': 'Desenvolvimento Frontend',
         'home.service1.desc': 'Interfaces modernas e responsivas com Angular e React. Foco em performance, usabilidade e design limpo.',
@@ -36,6 +37,8 @@ export const translations: Record<Lang, Record<string, string>> = {
         'about.skillGroup.frontend': 'Frontend',
         'about.skillGroup.backend': 'Backend',
         'about.skillGroup.integration': 'Integrações & Arquitetura',
+        'about.skill.microservices': 'Microsserviços',
+        'about.skill.systemIntegration': 'Integração entre sistemas',
         'about.skillGroup.tools': 'Ferramentas & DevOps',
         'about.experienceTitle': 'Experiência',
 
@@ -87,6 +90,7 @@ export const translations: Record<Lang, Record<string, string>> = {
         'contact.subtitle':
             'Estou sempre aberto a conexões. Fique à vontade para entrar em contato com perguntas, ideias ou oportunidades.',
         'contact.location': 'Localização',
+        'contact.location.value': 'Feira de Santana, Bahia, Brasil',
         'contact.phone': 'Telefone',
         'contact.social': 'Redes sociais',
         'contact.form.name': 'Nome',
@@ -124,6 +128,7 @@ export const translations: Record<Lang, Record<string, string>> = {
         'home.btn.projects': 'View Projects',
         'home.btn.contact': 'Get in Touch',
         'home.scroll': 'Scroll',
+        'home.stack.microservices': 'Microservices',
         'home.services.title': 'What I do',
         'home.service1.title': 'Frontend Development',
         'home.service1.desc': 'Modern and responsive interfaces with Angular and React. Focus on performance, usability and clean design.',
@@ -144,6 +149,8 @@ export const translations: Record<Lang, Record<string, string>> = {
         'about.skillGroup.frontend': 'Frontend',
         'about.skillGroup.backend': 'Backend',
         'about.skillGroup.integration': 'Integrations & Architecture',
+        'about.skill.microservices': 'Microservices',
+        'about.skill.systemIntegration': 'System Integration',
         'about.skillGroup.tools': 'Tools & DevOps',
         'about.experienceTitle': 'Experience',
 
@@ -195,6 +202,7 @@ export const translations: Record<Lang, Record<string, string>> = {
         'contact.subtitle':
             "I'm always open to connections. Feel free to reach out with questions, ideas or opportunities.",
         'contact.location': 'Location',
+        'contact.location.value': 'Feira de Santana, Bahia, Brazil',
         'contact.phone': 'Phone',
         'contact.social': 'Social networks',
         'contact.form.name': 'Name',

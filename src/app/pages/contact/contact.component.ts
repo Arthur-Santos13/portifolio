@@ -29,7 +29,7 @@ import { LanguageService } from '../../services/language.service';
               </div>
               <div>
                 <p class="contact-item__label">{{ lang.t('contact.location') }}</p>
-                <p class="contact-item__value">Feira de Santana, Bahia, Brasil</p>
+                <p class="contact-item__value">{{ lang.t('contact.location.value') }}</p>
               </div>
             </div>
 
