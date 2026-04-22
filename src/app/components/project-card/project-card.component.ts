@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../models/project.model';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
-    selector: 'app-project-card',
-    standalone: true,
-    imports: [CommonModule],
-    template: `
+  selector: 'app-project-card',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
     <div class="project-card" [class.featured]="project.featured">
       <div class="project-card__header">
         <div class="project-card__icon">
@@ -29,7 +30,7 @@ import { Project } from '../../models/project.model';
       </div>
 
       <h3 class="project-card__name">{{ project.name }}</h3>
-      <p class="project-card__desc">{{ project.description }}</p>
+      <p class="project-card__desc">{{ getDescription() }}</p>
 
       <div class="project-card__tags">
         <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
@@ -41,8 +42,16 @@ import { Project } from '../../models/project.model';
       </div>
     </div>
   `,
-    styleUrls: ['./project-card.component.scss']
+  styleUrls: ['./project-card.component.scss']
 })
 export class ProjectCardComponent {
-    @Input() project!: Project;
+  @Input() project!: Project;
+
+  private lang = inject(LanguageService);
+
+  getDescription(): string {
+    const key = `project.${this.project.name}`;
+    const translated = this.lang.t(key);
+    return translated !== key ? translated : this.project.description;
+  }
 }

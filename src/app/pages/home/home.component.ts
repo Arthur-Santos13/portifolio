@@ -1,12 +1,13 @@
-import { Component, OnInit, ElementRef, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, QueryList, ViewChildren, AfterViewInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    imports: [CommonModule, RouterLink],
-    template: `
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  template: `
     <section class="hero">
       <div class="hero__bg">
         <div class="hero__grid"></div>
@@ -14,14 +15,14 @@ import { CommonModule } from '@angular/common';
       </div>
       <div class="hero__container">
         <div class="hero__content reveal" #reveal>
-          <p class="hero__greeting">Olá, eu sou</p>
+          <p class="hero__greeting">{{ lang.t('home.greeting') }}</p>
           <h1 class="hero__title">
             Arthur Henrique<br>
             <span class="hero__title--accent">Software Developer</span>
           </h1>
           <p class="hero__subtitle">
-            Desenvolvimento Full Stack com foco em interfaces modernas e backends escaláveis.<br>
-            Construindo soluções do conceito ao deploy.
+            {{ lang.t('home.subtitle') }}<br>
+            {{ lang.t('home.subtitle2') }}
           </p>
           <div class="hero__stack">
             <span class="stack-badge">Angular</span>
@@ -34,8 +35,8 @@ import { CommonModule } from '@angular/common';
             <span class="stack-badge">Kafka</span>
           </div>
           <div class="hero__actions">
-            <a routerLink="/projects" class="btn btn--primary">Ver Projetos</a>
-            <a routerLink="/contact" class="btn btn--outline">Entre em Contato</a>
+            <a routerLink="/projects" class="btn btn--primary">{{ lang.t('home.btn.projects') }}</a>
+            <a routerLink="/contact" class="btn btn--outline">{{ lang.t('home.btn.contact') }}</a>
           </div>
           <div class="hero__social">
             <a href="https://github.com/Arthur-Santos13" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -73,7 +74,7 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <div class="hero__scroll-indicator">
-        <span>Scroll</span>
+        <span>{{ lang.t('home.scroll') }}</span>
         <div class="scroll-line"></div>
       </div>
     </section>
@@ -81,50 +82,59 @@ import { CommonModule } from '@angular/common';
     <!-- Services section -->
     <section class="services section-pad">
       <div class="container">
-        <h2 class="section-title reveal" #reveal>O que eu faço</h2>
+        <h2 class="section-title reveal" #reveal>{{ lang.t('home.services.title') }}</h2>
         <div class="services__grid">
           <div class="service-card reveal" #reveal *ngFor="let s of services">
             <div class="service-card__icon" [innerHTML]="s.icon"></div>
-            <h3>{{ s.title }}</h3>
-            <p>{{ s.desc }}</p>
+            <h3>{{ lang.t(s.titleKey) }}</h3>
+            <p>{{ lang.t(s.descKey) }}</p>
           </div>
         </div>
       </div>
     </section>
   `,
-    styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit {
-    @ViewChildren('reveal') revealElements!: QueryList<ElementRef>;
+  @ViewChildren('reveal') revealElements!: QueryList<ElementRef>;
 
-    services = [
-        {
-            icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg>`,
-            title: 'Desenvolvimento Frontend',
-            desc: 'Interfaces modernas e responsivas com Angular e React. Foco em performance, usabilidade e design limpo.'
-        },
-        {
-            icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M12 5l7 7-7 7"/></svg>`,
-            title: 'Desenvolvimento Backend & APIs',
-            desc: 'APIs REST robustas com Spring Boot e Node.js. Integrações entre sistemas, segurança e escalabilidade.'
-        },
-        {
-            icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>`,
-            title: 'Full Stack',
-            desc: 'Aplicações completas do conceito ao deploy. Arquitetura limpa, microsserviços e CI/CD.'
-        }
-    ];
+  lang = inject(LanguageService);
 
-    ngAfterViewInit(): void {
-        const observer = new IntersectionObserver(
-            entries => entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('revealed');
-                    observer.unobserve(e.target);
-                }
-            }),
-            { threshold: 0.15 }
-        );
-        this.revealElements.forEach(el => observer.observe(el.nativeElement));
+  services = [
+    {
+      icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg>`,
+      titleKey: 'home.service1.title',
+      descKey: 'home.service1.desc'
+    },
+    {
+      icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+      titleKey: 'home.service2.title',
+      descKey: 'home.service2.desc'
+    },
+    {
+      icon: `<svg width="28" height="28" fill="none" stroke="#8b5cf6" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>`,
+      titleKey: 'home.service3.title',
+      descKey: 'home.service3.desc'
     }
+  ];
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.15 }
+    );
+    this.revealElements.changes.subscribe(() => {
+      this.revealElements.forEach(el => {
+        if (!el.nativeElement.classList.contains('revealed')) {
+          observer.observe(el.nativeElement);
+        }
+      });
+    });
+    this.revealElements.forEach(el => observer.observe(el.nativeElement));
+  }
 }

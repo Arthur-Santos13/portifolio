@@ -8,3 +8,4 @@ export interface Project {
     liveUrl?: string;
     featured: boolean;
 }
+

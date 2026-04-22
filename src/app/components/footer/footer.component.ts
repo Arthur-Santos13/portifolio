@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
-    selector: 'app-footer',
-    standalone: true,
-    imports: [RouterLink],
-    template: `
+  selector: 'app-footer',
+  standalone: true,
+  imports: [RouterLink],
+  template: `
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__top">
@@ -15,9 +16,9 @@ import { RouterLink } from '@angular/router';
           </div>
           <div class="footer__links">
             <a routerLink="/">Home</a>
-            <a routerLink="/about">Sobre</a>
-            <a routerLink="/projects">Projetos</a>
-            <a routerLink="/contact">Contato</a>
+            <a routerLink="/about">{{ lang.t('footer.about') }}</a>
+            <a routerLink="/projects">{{ lang.t('footer.projects') }}</a>
+            <a routerLink="/contact">{{ lang.t('footer.contact') }}</a>
           </div>
           <div class="footer__social">
             <a href="https://github.com/Arthur-Santos13" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -29,13 +30,14 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
         <div class="footer__bottom">
-          <p>&copy; {{ year }} Arthur Henrique Mota Brito Santos. Todos os direitos reservados.</p>
+          <p>&copy; {{ year }} Arthur Henrique Mota Brito Santos. {{ lang.t('footer.rights') }}</p>
         </div>
       </div>
     </footer>
   `,
-    styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-    year = new Date().getFullYear();
+  lang = inject(LanguageService);
+  year = new Date().getFullYear();
 }
