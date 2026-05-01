@@ -68,6 +68,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     { value: 'Angular', labelKey: 'Angular' },
     { value: 'Java', labelKey: 'Java' },
     { value: 'TypeScript', labelKey: 'TypeScript' },
+    { value: 'Python', labelKey: 'Python' },
     { value: 'featured', labelKey: 'projects.filter.featured' },
   ];
 

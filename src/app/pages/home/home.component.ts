@@ -31,6 +31,7 @@ import { LanguageService } from '../../services/language.service';
             <span class="stack-badge">Spring Boot</span>
             <span class="stack-break"></span>
             <span class="stack-badge">Node.js</span>
+            <span class="stack-badge">Python</span>
             <span class="stack-badge">{{ lang.t('home.stack.microservices') }}</span>
             <span class="stack-badge">Kafka</span>
           </div>
@@ -64,7 +65,7 @@ import { LanguageService } from '../../services/language.service';
               </div>
               <pre class="code-badge__body"><code><span class="kw">const</span> <span class="var">stack</span> <span class="op">=</span> &#123;
   <span class="key">frontend</span>: [<span class="str">'Angular'</span>, <span class="str">'React'</span>],
-    <span class="key">backend</span>: [<span class="str">'Java'</span>, <span class="str">'Spring Boot'</span>, <span class="str">'Node.js'</span>],
+    <span class="key">backend</span>: [<span class="str">'Java'</span>, <span class="str">'Spring Boot'</span>, <span class="str">'Node.js'</span>, <span class="str">'Python'</span>],
     <span class="key">infra</span>: [<span class="str">'{{ lang.t("home.stack.microservices") }}'</span>, <span class="str">'Kafka'</span>, <span class="str">'Docker'</span>],
   <span class="key">available</span>: <span class="bool">true</span>
 &#125;;</code></pre>

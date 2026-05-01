@@ -91,7 +91,7 @@ export class AboutComponent implements AfterViewInit {
       },
       {
         label: this.lang.t('about.skillGroup.backend'),
-        skills: ['Java', 'Spring Boot', 'Quarkus', 'Node.js', 'REST APIs', 'PostgreSQL']
+        skills: ['Java', 'Spring Boot', 'Quarkus', 'Node.js', 'Python', 'REST APIs', 'PostgreSQL']
       },
       {
         label: this.lang.t('about.skillGroup.integration'),
