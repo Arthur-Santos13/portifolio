@@ -69,20 +69,25 @@ export const translations: Record<Lang, Record<string, string>> = {
         'projects.filter.featured': 'Destaques',
         'projects.loading': 'Carregando projetos...',
         'projects.github': 'Ver todos no GitHub',
+        'projects.noDescription': 'Sem descrição no repositório.',
 
-        // Project descriptions
+        // Descrições em PT (cópia local). Em inglês o site usa o campo "About" do GitHub em tempo real.
         'project.ecommerce-microservices-kafka':
-            'Plataforma de e-commerce com arquitetura de microsserviços, comunicação assíncrona via Apache Kafka, API Gateway e orquestrada via Docker Compose.',
+            'Plataforma de e-commerce orientada a eventos com microsserviços Java e Spring Boot, comunicação via Kafka, autenticação, pagamentos, processamento de pedidos e arquitetura distribuída escalável.',
         'project.ecommerce-frontend':
-            'Frontend da plataforma ecommerce-microservices-kafka, responsável por interagir com o API Gateway e consumir os serviços backend.',
+            'Front-end Angular da plataforma ecommerce-microservices-kafka, com autenticação, catálogo, carrinho, checkout e integração com o API Gateway e os serviços backend.',
         'project.leadflow-crm':
-            'CRM fullstack para gerenciamento de clientes, leads e pipelines de vendas. Backend REST e frontend responsivo com React.',
+            'CRM full stack para clientes, leads e pipelines de vendas, com backend REST escalável, front-end responsivo, autenticação, painéis analíticos e gestão de fluxos de trabalho.',
         'project.task-manager-app':
-            'Sistema completo de gerenciamento de tarefas com Spring Boot no backend, Angular no frontend e autenticação JWT.',
+            'Sistema full stack de tarefas com Java e Spring Boot no backend e Angular no front-end, com JWT, filtros de tarefas, interface responsiva e arquitetura modular escalável.',
         'project.sales-analytics-dashboard':
-            'Dashboard interativo para visualização de métricas de vendas com gráficos dinâmicos, filtros e exportação de dados.',
+            'Painel interativo para métricas de vendas com gráficos e filtros dinâmicos. Stack: React, Node.js, PostgreSQL, Recharts.',
         'project.goledger-challenge-web':
-            'Solução para o desafio frontend GoLedger 2026: CRUD de artistas e álbuns integrado com API blockchain, com busca e navegação dinâmica.',
+            'Repositório para o desafio de front-end do processo seletivo de 1/2026.',
+        'project.smart-recommendation-api':
+            'API de recomendação com FastAPI, combinando filtros baseados em conteúdo e colaborativos, com sugestões por categoria e resultados explicáveis.',
+        'project.smart-recommendation-frontend':
+            'Front-end da plataforma smart-recommendation-api, consumindo a API de recomendações do backend.',
 
         // Contact
         'contact.tag': '// contato',
@@ -181,20 +186,7 @@ export const translations: Record<Lang, Record<string, string>> = {
         'projects.filter.featured': 'Featured',
         'projects.loading': 'Loading projects...',
         'projects.github': 'View all on GitHub',
-
-        // Project descriptions
-        'project.ecommerce-microservices-kafka':
-            'E-commerce platform with microservices architecture, asynchronous communication via Apache Kafka, API Gateway orchestrated via Docker Compose.',
-        'project.ecommerce-frontend':
-            'Frontend for the ecommerce-microservices-kafka platform, responsible for interacting with the API Gateway and consuming backend services.',
-        'project.leadflow-crm':
-            'Fullstack CRM for managing clients, leads and sales pipelines. REST backend and responsive frontend with React.',
-        'project.task-manager-app':
-            'Complete task management system with Spring Boot backend, Angular frontend and JWT authentication.',
-        'project.sales-analytics-dashboard':
-            'Interactive dashboard for sales metrics visualization with dynamic charts, filters and data export.',
-        'project.goledger-challenge-web':
-            'Solution for the GoLedger 2026 frontend challenge: artist and album CRUD integrated with blockchain API, with search and dynamic navigation.',
+        'projects.noDescription': 'No repository description.',
 
         // Contact
         'contact.tag': '// contact',

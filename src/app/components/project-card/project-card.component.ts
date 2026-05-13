@@ -50,8 +50,16 @@ export class ProjectCardComponent {
   private lang = inject(LanguageService);
 
   getDescription(): string {
+    const fallback = this.lang.t('projects.noDescription');
+    const fromGithub = (this.project.description || '').trim();
+    const githubLine = fromGithub || fallback;
+
+    if (this.lang.isEnglish()) {
+      return githubLine;
+    }
+
     const key = `project.${this.project.name}`;
     const translated = this.lang.t(key);
-    return translated !== key ? translated : this.project.description;
+    return translated !== key ? translated : githubLine;
   }
 }
